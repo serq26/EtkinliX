@@ -1,39 +1,18 @@
 import "./style.scss";
 import Header from "./components/Header";
-import EventBox from "./components/EventBox";
-import { useEvents } from "./contexts/EventContext";
+import Home from "./pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EventDetail from "./pages/EventDetail";
 
 function App() {
-  const {events} = useEvents();
-  
-  // useEffect(() => {
-  //   const getEvents = async () => {
-  //     const data = await fetchEventList();
-  //     setEvents(data);
-  //   };
-  //   getEvents();
-  // }, []);
-
-  // useEffect(() => {
-  //   const getEvent = async (paramName, value) => {
-  //     const data = await fetchEventWithParams("city", "İstanbul");
-  //     console.log(data);
-  //     setEvents(data);
-  //   };
-  //   getEvent();
-  // }, []);
-
   return (
-    <div>
+    <BrowserRouter>
       <Header />
-      <div className="container events">
-        <div className="row">
-          {events.map((event, key) => (
-            <EventBox key={key} event={event} />
-          ))}
-        </div>
-      </div>
-    </div>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/event/:eventId" element={<EventDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

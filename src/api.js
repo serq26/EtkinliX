@@ -10,6 +10,17 @@ function findAll() {
 }
 
 /**
+ * Get data by id
+ * @param {String} id
+ */
+ function findById(id) {
+  return new Promise((resolve, reject) => {
+    const event = events.find((e) => e.id === id);
+    resolve(event);
+  });
+}
+
+/**
  * Searching for events by input text
  * @param {String} paramName
  * @param {String} value 
@@ -52,4 +63,9 @@ export const fetchEventWithParams = async (paramName, value) => {
 export const fetchEventBySearch = async (searchText) => {
   const events = await findBySearch(searchText);
   return events;
+};
+
+export const fetchEventById = async (id) => {
+  const event = await findById(id);
+  return event;
 };

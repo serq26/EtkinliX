@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function EventBox({ event }) {
   return (
     <div className="col-4 event-box">
-      <a href={`/event/${event.id}`} title={event.title}>
+      <Link to={`/event/${event.id}`} title={event.title}>
         <div className="event-image">
           <img src={event.images[0]} alt={event.title} />
         </div>
@@ -14,7 +15,7 @@ export default function EventBox({ event }) {
             {event.startDate} / {event.endDate}
           </small>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
