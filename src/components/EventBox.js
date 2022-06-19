@@ -6,7 +6,7 @@ export default function EventBox({ event }) {
     <div className="col-4 event-box">
       <Link to={`/event/${event.id}`} title={event.title}>
         <div className="event-image">
-          <img src={event.images[0]} alt={event.title} />
+          <img src={event.images[0].src} alt={event.title} />
         </div>
         <span className="title">{event.title}</span>
         <div className="event-box-footer">
