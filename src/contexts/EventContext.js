@@ -14,7 +14,7 @@ const EventProvider = ({ children }) => {
     getEvents();
   }, []);
 
-  const values = { events };
+  const values = { events, setEvents };
 
   return <EventContext.Provider value={values}>{children}</EventContext.Provider>;
 };
