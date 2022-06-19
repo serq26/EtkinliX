@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "./SearchBar";
 
 export default function Header() {
   return (
@@ -14,7 +15,7 @@ export default function Header() {
                 </a>
               </li>
               <li>
-                <a href="/#" title="">
+                <a href="/#" title="Geçmiş Etkinlikler">
                   Geçmiş Etkinlikler
                 </a>
               </li>
@@ -25,14 +26,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <div className="col-3 searchBar">
-            <input
-              type="search"
-              id="search"
-              name="search"
-              placeholder="Etkinlik, Sanatçı yada Mekann Arayın"
-            />
-          </div>
+          <SearchBar />
         </div>
       </div>
     </div>
