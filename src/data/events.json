@@ -1,0 +1,68 @@
+[
+    {
+        "id":"1",
+        "title": "Etkinlik",
+        "description": "Etkinlik Açıklaması",
+        "category": "Konser",
+        "startDate":"2022-03-05 10:12:00",
+        "endDate":"2022-03-05 12:30:00",
+        "owner":"Etkinlik Sahibi",
+        "images":{
+            "0": "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "1": "https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "2": "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        "city": "İstanbul",
+        "place": "Harbiye Açık Hava Tiyatrosu",
+        "isTicketed": true,
+        "seats": {
+            "1.Kategori": "250 TL",
+            "2.Kategori": "200 TL",
+            "3.Kategori": "100 TL"
+        }
+    },
+    {
+        "id":"2",
+        "title": "Etkinlik 2",
+        "description": "Etkinlik Açıklaması 2",
+        "category": "Konser",
+        "startDate":"2022-03-05 10:12:00",
+        "endDate":"2022-03-05 12:30:00",
+        "owner":"Etkinlik Sahibi 2",
+        "images":{
+            "0": "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "1": "https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "2": "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        "city": "İstanbul",
+        "place": "Harbiye Açık Hava Tiyatrosu",
+        "isTicketed": true,
+        "seats": {
+            "1.Kategori": "750 TL",
+            "2.Kategori": "500 TL",
+            "3.Kategori": "200 TL"
+        }
+    },
+    {
+        "id":"3",
+        "title": "Etkinlik 3",
+        "description": "Etkinlik Açıklaması 3",
+        "category": "Sergi",
+        "startDate":"2022-03-05 10:12:00",
+        "endDate":"2022-03-05 12:30:00",
+        "owner":"Etkinlik Sahibi 3",
+        "images":{
+            "0": "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "1": "https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "2": "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        "city": "Ankara",
+        "place": "Ankara Devlet Tiyatrosu",
+        "isTicketed": true,
+        "seats": {
+            "1.Kategori": "150 TL",
+            "2.Kategori": "100 TL",
+            "3.Kategori": "50 TL"
+        }
+    }
+]
