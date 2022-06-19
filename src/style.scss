@@ -1,0 +1,221 @@
+@import "variables";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+a:hover,
+a:focus {
+  text-shadow: none;
+  text-decoration: none;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+img {
+  vertical-align: middle;
+}
+
+div[class^="col-"] {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    flex: 0 0 100% / $columns * $i;
+  }
+  .col-offset-#{$i} {
+    margin-left: 100% / $columns * $i;
+  }
+}
+
+@mixin min($bp, $max: "null", $device: "screen") {
+  @if $max == "null" {
+    @media only #{$device} and (min-width: #{$bp}) {
+      @content;
+    }
+  } @else {
+    @media only #{$device} and (min-width: #{$bp}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+@function bp($bp) {
+  @return map-get($breakpoints, $bp);
+}
+
+$breakpoints: (
+  na: 0px,
+  // For BS grid
+  xs: 320px,
+  // Smartphone
+  sm: 600px,
+  // Tablets
+  md: 900px,
+  // Tablets Landscape and small desktops
+  lg: 1200px,
+  // Desktops
+  xl: 1800px,
+  // Large Desktop
+);
+
+@function container($container-size, $true-val: false) {
+  @return map-get($container-sizes, $container-size);
+}
+
+$container-sizes: (
+  sm: map-get($breakpoints, sm) - 30px,
+  md: map-get($breakpoints, md) - 40px,
+  lg: map-get($breakpoints, lg) - 50px,
+  xl: map-get($breakpoints, xl) - 400px,
+);
+
+.container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  &:not(.is-fluid) {
+    margin: 0 auto;
+
+    @each $bp, $container-size in $container-sizes {
+      @include min(#{bp(#{$bp})}) {
+        width: 100%;
+        max-width: container(#{$bp});
+      }
+    }
+  }
+}
+
+@each $bp, $container-size in $container-sizes {
+  .container-#{$bp} {
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+
+    $i: index($container-sizes, $bp $container-size);
+
+    @for $j from $i through length($container-sizes) {
+      @include min(#{bp(nth(nth($container-sizes, $j), 1))}) {
+        max-width: container(#{nth(nth($container-sizes, $j), 1)});
+      }
+    }
+  }
+}
+
+.header {
+  background-color: #ccc;
+  .logo {
+    font-weight: 900;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    li {
+      margin-right: 10px;
+      width: 20%;
+      a {
+        font-size: 18px;
+        font-weight: 500;
+        &:hover {
+          color: red;
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+  }
+  .searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    input {
+      height: 40px;
+      border: 2px solid transparent;
+      padding: 10px;
+      display: block;
+      width: 100%;
+      font-weight: 500;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px #aaa;
+      &:focus-within {
+        outline: none;
+        border: 2px solid #ddd;
+      }
+    }
+  }
+}
+
+.events {
+  padding: 50px 0;
+}
+
+.event-box {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 0 !important;
+  overflow: hidden;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    transform: scale(0.95);
+  }
+  &:hover .event-image img {
+    transform: scale(1.1);
+  }
+  .event-image {
+    overflow: hidden;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      transition: all 1s ease-in-out;
+    }
+  }
+  .title {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .event-box-footer {
+    display: block;
+    margin: 15px 0;
+    padding: 20px;
+    .date {
+      display: flex;
+      align-items: center;
+      justify-self: flex-end;
+      width: 100%;
+    }
+    .place {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+}
