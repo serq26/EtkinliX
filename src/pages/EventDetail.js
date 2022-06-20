@@ -4,10 +4,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { fetchEventById } from "../api";
+import SocialMediaShare from "../components/SocialMediaShare";
 
 export default function EventDetail() {
   const [event, setEvent] = useState({});
-  const [loading,setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const { eventId } = useParams();
 
   useEffect(() => {
@@ -23,30 +24,31 @@ export default function EventDetail() {
 
   return (
     <div>
-      {!loading  ? (<div>
-        {event.title}
-        <Swiper
-          className="mySwiper"
-          spaceBetween={50}
-          slidesPerView={1}
-          speed={1200}
-        >
-          <SwiperSlide>
-            <img src={event.images[0].src} alt={event.title} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={event.images[1].src} alt={event.title} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={event.images[2].src} alt={event.title} />
-          </SwiperSlide>
-        </Swiper>
-        <div dangerouslySetInnerHTML={{ __html: event.map }} />
-      </div>)
-      :(
+      {!loading ? (
+        <div>
+          {event.title}
+          <Swiper
+            className="mySwiper"
+            spaceBetween={50}
+            slidesPerView={1}
+            speed={1200}
+          >
+            <SwiperSlide>
+              <img src={event.images[0].src} alt={event.title} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={event.images[1].src} alt={event.title} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={event.images[2].src} alt={event.title} />
+            </SwiperSlide>
+          </Swiper>
+          <div dangerouslySetInnerHTML={{ __html: event.map }} />
+          <SocialMediaShare title={event.title} />
+        </div>
+      ) : (
         <div>Loading...</div>
-      )
-      }
+      )}
     </div>
   );
 }
