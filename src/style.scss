@@ -149,25 +149,25 @@ $container-sizes: (
       }
     }
   }
-  .searchBar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    input {
-      height: 40px;
-      border: 2px solid transparent;
-      padding: 10px;
-      display: block;
-      width: 100%;
-      font-weight: 500;
-      border-radius: 8px;
-      box-shadow: 2px 2px 10px #aaa;
-      &:focus-within {
-        outline: none;
-        border: 2px solid #ddd;
-      }
-    }
-  }
+  // .searchBar {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: flex-start;
+  //   input {
+  //     height: 40px;
+  //     border: 2px solid transparent;
+  //     padding: 10px;
+  //     display: block;
+  //     width: 100%;
+  //     font-weight: 500;
+  //     border-radius: 8px;
+  //     box-shadow: 2px 2px 10px #aaa;
+  //     &:focus-within {
+  //       outline: none;
+  //       border: 2px solid #ddd;
+  //     }
+  //   }
+  // }
 }
 
 .events {
@@ -228,7 +228,6 @@ $container-sizes: (
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -248,4 +247,68 @@ $container-sizes: (
   width: 900px;
   height: 400px;
   object-fit: cover;
+}
+
+.search {
+  position: relative;
+  input {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    height: 30px;
+    border: 2px solid transparent;
+    padding: 10px;
+    display: block;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px #aaa;
+    &:focus-within {
+      outline: none;
+      border: 2px solid #ddd;
+    }
+    input.typing {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+  .search-result {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+    max-height: 300px;
+    overflow: auto;
+    z-index: 99;
+    right: 0;
+    .search-result-item {
+      padding: 0 15px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        background: antiquewhite;
+      }
+      img {
+        height: 40px;
+        margin-right: 15px;
+      }
+      .date {
+        font-size: 12px;
+        color: #999;
+        padding-top: 5px;
+      }
+    }
+  }
+  .result-not-found {
+    padding: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.search input.typing {
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
 }
