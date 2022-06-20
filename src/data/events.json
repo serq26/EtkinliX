@@ -26,7 +26,7 @@
         "id":"2",
         "title": "Etkinlik 2",
         "description": "Etkinlik Açıklaması 2",
-        "category": "Konser",
+        "category": "Tiyatro",
         "startDate":"2022-03-05 10:12:00",
         "endDate":"2022-03-05 12:30:00",
         "owner":"Etkinlik Sahibi 2",

@@ -15,6 +15,7 @@
     "react-share": "^4.4.0",
     "sass": "^1.52.3",
     "swiper": "^8.2.4",
+    "url-slug": "^3.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
