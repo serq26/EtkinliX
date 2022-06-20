@@ -9,6 +9,7 @@ import SocialMediaShare from "../components/SocialMediaShare";
 export default function EventDetail() {
   const [event, setEvent] = useState({});
   const [loading, setLoading] = useState(true);
+  const [seatCategory, setSeatCategory] = useState("");
   const { eventId } = useParams();
 
   useEffect(() => {
@@ -45,6 +46,20 @@ export default function EventDetail() {
           </Swiper>
           <div dangerouslySetInnerHTML={{ __html: event.map }} />
           <SocialMediaShare title={event.title} />
+          {event.isTicketed && <div className="seats">
+            <select
+              id="seats"
+              name="seats"
+              onChange={(e) => setSeatCategory(e.target.value)}
+            >
+              {event.seats.map((item, index) => (
+                <option value={`${item.category} - ${item.price}`} key={index}>
+                  {item.category}
+                </option>
+              ))}
+            </select>
+            {seatCategory}
+          </div>}
         </div>
       ) : (
         <div>Loading...</div>

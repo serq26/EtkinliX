@@ -16,11 +16,11 @@
         "place": "Harbiye Açık Hava Tiyatrosu",
         "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12036.195328280166!2d28.9900301!3d41.0460612!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa73a3d0b8b295da9!2sCemil%20Topuzlu%20A%C3%A7%C4%B1k%20Hava%20Tiyatrosu!5e0!3m2!1str!2str!4v1655626759230!5m2!1str!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "isTicketed": true,
-        "seats": {
-            "1.Kategori": "250 TL",
-            "2.Kategori": "200 TL",
-            "3.Kategori": "100 TL"
-        }
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ]
     },
     {
         "id":"2",
@@ -39,11 +39,11 @@
         "place": "Harbiye Açık Hava Tiyatrosu",
         "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12036.195328280166!2d28.9900301!3d41.0460612!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa73a3d0b8b295da9!2sCemil%20Topuzlu%20A%C3%A7%C4%B1k%20Hava%20Tiyatrosu!5e0!3m2!1str!2str!4v1655626759230!5m2!1str!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "isTicketed": true,
-        "seats": {
-            "1.Kategori": "750 TL",
-            "2.Kategori": "500 TL",
-            "3.Kategori": "200 TL"
-        }
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ]
     },
     {
         "id":"3",
@@ -62,10 +62,10 @@
         "place": "Ahmet Vefik Paşa Bursa Devlet Tiyatrosu",
         "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.1661241245547!2d29.06472811564377!3d40.18311627773783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca40e54c023763%3A0xd4c8084c9a21620e!2sAhmet%20Vefik%20Pa%C5%9Fa%20Bursa%20Devlet%20Tiyatrosu!5e0!3m2!1str!2str!4v1655626890061!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "isTicketed": true,
-        "seats": {
-            "1.Kategori": "150 TL",
-            "2.Kategori": "100 TL",
-            "3.Kategori": "50 TL"
-        }
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ]
     }
 ]
