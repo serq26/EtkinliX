@@ -4,8 +4,8 @@
         "title": "Etkinlik",
         "description": "Etkinlik Açıklaması",
         "category": "Konser",
-        "startDate":"2022-03-05 10:12:00",
-        "endDate":"2022-03-05 12:30:00",
+        "startDate":"05-03-2022 10:12:00",
+        "endDate":"05-03-2022 12:30:00",
         "owner":"Etkinlik Sahibi",
         "images":[
             {"src":"https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
@@ -27,8 +27,8 @@
         "title": "Etkinlik 2",
         "description": "Etkinlik Açıklaması 2",
         "category": "Tiyatro",
-        "startDate":"2022-03-05 10:12:00",
-        "endDate":"2022-03-05 12:30:00",
+        "startDate":"05-03-2022 10:12:00",
+        "endDate":"05-03-2022 12:30:00",
         "owner":"Etkinlik Sahibi 2",
         "images":[
             {"src":"https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
@@ -50,8 +50,8 @@
         "title": "Etkinlik 3",
         "description": "Etkinlik Açıklaması 3",
         "category": "Sergi",
-        "startDate":"2022-03-05 10:12:00",
-        "endDate":"2022-03-05 12:30:00",
+        "startDate":"05-03-2022 10:12:00",
+        "endDate":"05-03-2022 12:30:00",
         "owner":"Etkinlik Sahibi 3",
         "images":[
             {"src":"https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},

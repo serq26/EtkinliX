@@ -1,4 +1,6 @@
-var events = require("./data/events.json");
+// var events = require("./data/events.json");
+import events from "./data/events.json";
+import urlSlug from "url-slug";
 
 /**
  * Gets all events
@@ -52,6 +54,61 @@ function findBySearch(value) {
   });
 }
 
+function getCities() {
+  return new Promise((resolve, reject) => {
+    var cities = [];
+    for (var i = 0; i < events.length; i++) {
+      !cities.includes(events[i]["city"]) && cities.push(events[i]["city"]);
+    }
+    resolve(cities);
+  });
+}
+
+function getCategories() {
+  return new Promise((resolve, reject) => {
+    var categories = [];
+    for (var i = 0; i < events.length; i++) {
+      !categories.includes(events[i]["category"]) &&
+        categories.push(events[i]["category"]);
+    }
+    resolve(categories);
+  });
+}
+
+function getPlaces() {
+  return new Promise((resolve, reject) => {
+    var places = [];
+    for (var i = 0; i < events.length; i++) {
+      !places.includes(events[i]["place"]) && places.push(events[i]["place"]);
+    }
+    resolve(places);
+  });
+}
+
+function getPlaceEvents(place) {
+  return new Promise((resolve, reject) => {
+    var placeEvents = events.filter(
+      (event) => urlSlug(event.place, { dictionary: { ı: "i" } }) === place
+    );
+
+    resolve(placeEvents);
+  });
+}
+
+function getEventsByFilter(filters) {
+  return new Promise((resolve, reject) => {
+    const filtered = events.filter((item) => {
+      for (var key in filters) {
+        if (!filters[key]) continue;
+
+        if (item[key] !== filters[key]) return false;
+      }
+      return true;
+    });
+    resolve(filtered);
+  });
+}
+
 export const fetchEventList = async () => {
   const events = await findAll();
   return events;
@@ -70,4 +127,29 @@ export const fetchEventBySearch = async (searchText) => {
 export const fetchEventById = async (id) => {
   const event = await findById(id);
   return event;
+};
+
+export const fetchCities = async () => {
+  const cities = await getCities();
+  return cities;
+};
+
+export const fetchEventCategories = async () => {
+  const categories = await getCategories();
+  return categories;
+};
+
+export const fetchPlaces = async () => {
+  const places = await getPlaces();
+  return places;
+};
+
+export const fetchEventsByPlace = async (place) => {
+  const events = await getPlaceEvents(place);
+  return events;
+};
+
+export const fetchEventsByFilter = async (filters) => {
+  const events = await getEventsByFilter(filters);
+  return events;
 };

@@ -4,6 +4,7 @@ import { useEvents } from "../contexts/EventContext";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import EventFilter from "../components/EventFilter";
 
 export default function Home() {
   const [popularEvents, setPopularEvents] = useState([]);
@@ -34,6 +35,11 @@ export default function Home() {
           ))}
         </Swiper>
       )}
+      <div className="row">
+        <div className="col-12">
+          <EventFilter />
+        </div>
+      </div>
       <div className="row">
         {events.map((event, key) => (
           <EventBox key={key} event={event} />

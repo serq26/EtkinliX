@@ -17,6 +17,7 @@ export default function EventBox({ event }) {
           <small className="date">
             {event.startDate} / {event.endDate}
           </small>
+          <span>{event.category}</span>
         </div>
       {/* </Link> */}
     </div>
