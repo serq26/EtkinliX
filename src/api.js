@@ -109,6 +109,14 @@ function getEventsByFilter(filters) {
   });
 }
 
+function getOldEvents() {
+  return new Promise((resolve, reject) => {
+    const today = Date.now();
+    const oldEvents = events.filter((e) =>Date.parse(e.startDate) < today);
+    resolve(oldEvents);
+  });
+}
+
 export const fetchEventList = async () => {
   const events = await findAll();
   return events;
@@ -152,4 +160,9 @@ export const fetchEventsByPlace = async (place) => {
 export const fetchEventsByFilter = async (filters) => {
   const events = await getEventsByFilter(filters);
   return events;
+};
+
+export const fetchOldEvents = async () => {
+  const oldEvents = await getOldEvents();
+  return oldEvents;
 };

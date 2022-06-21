@@ -9,6 +9,8 @@ export default function EventListItem({event}) {
             <span>{event.title}</span>
             <span>{event.owner}</span>
             <span>{event.place} / {event.city}</span>
+            <br/>
+            <span>{event.startDate}</span>
         </Link>
     </li>
   )
