@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { fetchEventBySearch } from "../api";
 import ContentLoader from "react-content-loader";
+import { Link } from "react-router-dom";
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");
@@ -39,10 +40,6 @@ export default function SearchBar() {
     }
   };
 
-  const getResultItem = (item) => {
-    window.location.href = "/event/"+item.id;
-  };
-
   useEffect(() => {
     if (isTyping) {
       setLoading(true);
@@ -62,7 +59,7 @@ export default function SearchBar() {
   }, [search]);
 
   return (
-    <div className="col-3">
+    <div className="col-xl-3">
       <div className="search" ref={searchRef}>
         <input
           type="text"
@@ -76,17 +73,18 @@ export default function SearchBar() {
             {result &&
               loading === false &&
               result.map((event) => (
-                <div
-                  onClick={() => getResultItem(event)}
-                  key={event.id}
-                  className="search-result-item"
-                >
-                  <img src={event.images[0].src} alt={event.title} />
-                  <div>
-                    <div className="title">{event.title}</div>
-                    <div className="date">{event.owner}</div>
+                <Link to={`/event/${event.id}`}>
+                  <div
+                    key={event.id}
+                    className="search-result-item"
+                  >
+                    <img src={event.images.length > 0 ? event.images[0].src : "/images/empty-image.png"} alt={event.title} />
+                    <div>
+                      <div className="title">{event.title}</div>
+                      <div className="date">{event.owner}</div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             {loading && new Array(3).fill().map(() => <AutocompleteLoader />)}
             {!result && loading === false && (

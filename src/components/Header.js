@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 export default function Header() {
@@ -6,23 +7,22 @@ export default function Header() {
     <div className="header">
       <div className="container">
         <div className="row">
-          <div className="col-1 logo">etkinliX</div>
-          <div className="col-8">
+          <div className="col-xl-1">
+            <Link  to="/">
+              <div className="logo">etkinliX</div>
+            </Link>
+          </div>
+          <div className="col-xl-8">
             <ul>
               <li>
-                <a href="/#" title="">
+                <Link to="/" title="Ansayfa">
                   Anasayfa
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#" title="Geçmiş Etkinlikler">
+                <Link to="/old-events" title="Geçmiş Etkinlikler">
                   Geçmiş Etkinlikler
-                </a>
-              </li>
-              <li>
-                <a href="/#" title="">
-                  İletişim
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

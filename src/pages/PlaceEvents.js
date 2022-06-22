@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchEventsByPlace } from "../api";
 import EventListItem from "../components/EventListItem";
 import { useEvents } from "../contexts/EventContext";
+import * as urlSlug from 'url-slug'
 
 export default function PlaceEvents() {
   const { placeUrl } = useParams();
@@ -17,10 +18,19 @@ export default function PlaceEvents() {
   }, [placeUrl]);
 
   return (
-    <div>
-      {events.map((event,key) => 
-        <EventListItem key={key} event={event} />
-      )}
+    <div className="container">
+      <div className="row">
+        <div className="col-xl-12">
+          <div className="place-events">
+            <h2>{urlSlug.convert(placeUrl,{transformer: urlSlug.TITLECASE_TRANSFORMER})}</h2>
+            <ul>
+              {events.map((event, key) => (
+                <EventListItem key={key} event={event} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
