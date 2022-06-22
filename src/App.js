@@ -6,6 +6,7 @@ import EventDetail from "./pages/EventDetail";
 import PlaceEvents from "./pages/PlaceEvents";
 import OldEvents from "./pages/OldEvents";
 import { useTheme } from "./contexts/ThemeContext";
+import Footer from "./components/Footer";
 
 function App() {
   const { theme } = useTheme();
@@ -19,6 +20,7 @@ function App() {
           <Route path="/place/:placeUrl" element={<PlaceEvents />} />
           <Route path="/old-events" element={<OldEvents />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
