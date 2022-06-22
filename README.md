@@ -75,6 +75,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 =======
-# etkinlix
-ETS Tur Hiring Challange Task
->>>>>>> 5b1835fcf499d06fb58752c844f56c2efbb3ca86
