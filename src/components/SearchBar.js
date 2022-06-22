@@ -59,7 +59,7 @@ export default function SearchBar() {
   }, [search]);
 
   return (
-    <div className="col-xl-3">
+    <div className="col-xl-3 col-lg-3">
       <div className="search" ref={searchRef}>
         <input
           type="text"
@@ -73,7 +73,7 @@ export default function SearchBar() {
             {result &&
               loading === false &&
               result.map((event,key) => (
-                <Link to={`/event/${event.id}`} key={key}>
+                <Link to={`/event/${event.id}`} key={key} onClick={() => handleClickOutside()}>
                   <div className="search-result-item">
                     <img
                       src={
