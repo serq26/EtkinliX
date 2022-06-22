@@ -1,17 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchEventsByPlace } from "../api";
 import EventListItem from "../components/EventListItem";
-import { useEvents } from "../contexts/EventContext";
-import * as urlSlug from 'url-slug'
+import * as urlSlug from "url-slug";
 
 export default function PlaceEvents() {
   const { placeUrl } = useParams();
-  const { events, setEvents } = useEvents();
+  const [placeEvents, setPlaceEvents] = useState([]);
 
   useEffect(() => {
     const getEvents = async (place) => {
-      setEvents(await fetchEventsByPlace(place));
+      setPlaceEvents(await fetchEventsByPlace(place));
     };
 
     getEvents(placeUrl);
@@ -22,9 +21,15 @@ export default function PlaceEvents() {
       <div className="row">
         <div className="col-xl-12">
           <div className="place-events">
-            <h2>{urlSlug.convert(placeUrl,{transformer: urlSlug.TITLECASE_TRANSFORMER})}</h2>
+            <h2>
+              {urlSlug
+                .convert(placeUrl, {
+                  transformer: urlSlug.TITLECASE_TRANSFORMER,
+                })
+                .replaceAll("-", " ")}
+            </h2>
             <ul>
-              {events.map((event, key) => (
+              {placeEvents.map((event, key) => (
                 <EventListItem key={key} event={event} />
               ))}
             </ul>

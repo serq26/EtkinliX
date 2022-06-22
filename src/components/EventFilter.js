@@ -2,38 +2,46 @@ import React, { useEffect, useState } from "react";
 import {
   fetchCities,
   fetchEventCategories,
-  fetchEventList,
+  fetchEventsByDate,
+  fetchEventsByEndDate,
   fetchEventsByFilter,
-  fetchEventWithParams,
+  fetchEventsByStartDate,
   fetchPlaces,
 } from "../api";
 import { useEvents } from "../contexts/EventContext";
-import moment from "moment";
 
 export default function EventFilter() {
   const { events, setEvents } = useEvents();
   const [cities, setCities] = useState([]);
   const [categories, setCategories] = useState([]);
   const [places, setPlaces] = useState([]);
+  const [startDate, setStartDate] = useState(undefined);
+  const [endDate, setEndDate] = useState(undefined);
   const [filters, setFilters] = useState({
     city: "",
     category: "",
     place: "",
-    startDate: "",
-    endDate: "",
   });
 
+  // Get events by filter
   useEffect(() => {
     const getDataByFilters = async (filters) => {
       setEvents(await fetchEventsByFilter(filters));
     };
 
     getDataByFilters(filters);
-
-    // return(
-    //   getDataByFilters(filters)
-    // )
   }, [filters]);
+
+    // Get event by dates filter
+    useEffect(() => {
+      if (endDate !== undefined || startDate !== undefined) {
+        const getDataByDate = async (startDate,endDate) => {
+          setEvents(await fetchEventsByDate(startDate,endDate));
+        };
+  
+        getDataByDate(startDate,endDate);
+      }
+    }, [startDate,endDate]);
 
   // Gets all cities
   useEffect(() => {
@@ -70,13 +78,6 @@ export default function EventFilter() {
           id="city"
           name="city"
           onChange={async (e) => {
-            // if (!e.target.value) return setEvents(await fetchEventList());
-
-            // const filteredEvents = await fetchEventWithParams(
-            //   "city",
-            //   e.target.value
-            // );
-            // setEvents(filteredEvents);
             setFilters({ ...filters, city: e.target.value });
           }}
         >
@@ -89,18 +90,11 @@ export default function EventFilter() {
         </select>
       </div>
       <div className="form-group">
-      <label>Kategori</label>
+        <label>Kategori</label>
         <select
           id="category"
           name="category"
           onChange={async (e) => {
-            // if (!e.target.value) return setEvents(await fetchEventList());
-        
-            // const filteredEvents = await fetchEventWithParams(
-            //   "category",
-            //   e.target.value
-            // );
-            // setEvents(filteredEvents);
             setFilters({ ...filters, category: e.target.value });
           }}
         >
@@ -113,18 +107,11 @@ export default function EventFilter() {
         </select>
       </div>
       <div className="form-group">
-      <label>Mekan</label>
+        <label>Mekan</label>
         <select
           id="place"
           name="place"
           onChange={async (e) => {
-            // if (!e.target.value) return setEvents(await fetchEventList());
-        
-            // const filteredEvents = await fetchEventWithParams(
-            //   "place",
-            //   e.target.value
-            // );
-            // setEvents(filteredEvents);
             setFilters({ ...filters, place: e.target.value });
           }}
         >
@@ -137,34 +124,25 @@ export default function EventFilter() {
         </select>
       </div>
       <div className="form-group">
-      <label>Başlangıç Tarihi:</label>
+        <label>Başlangıç Tarihi:</label>
         <input
           type="date"
           name="startDate"
           id="startDate"
-          onChange={(e) =>
-            setFilters({
-              ...filters,
-              startDate: moment(e.target.value).format("DD-MM-YYYY"),
-            })
-          }
+          onChange={(e) => setStartDate(e.target.value)}
         />
       </div>
       <div className="form-group">
-      <label>Bitiş Tarihi:</label>
+        <label>Bitiş Tarihi:</label>
         <input
           type="date"
           name="endDate"
           id="endDate"
-          onChange={(e) =>
-            setFilters({
-              ...filters,
-              endDate: moment(e.target.value).format("DD-MM-YYYY"),
-            })
-          }
+          onChange={(e) => setEndDate(e.target.value)}
         />
       </div>
-      {/* {JSON.stringify(filters)} */}
+      <span>{startDate}</span>
+      <span>-  {endDate}</span>
     </div>
   );
 }

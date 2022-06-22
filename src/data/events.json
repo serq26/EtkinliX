@@ -1,20 +1,19 @@
 [
     {
         "id":"1",
-        "title": "Etkinlik",
-        "description": "Etkinlik Açıklaması",
+        "title": "Pinhani Konser",
+        "description": "Pinhani, sevenleriyle buluşmaya hazırlanıyor.",
         "category": "Konser",
-        "startDate":"07-17-2022 10:12:00",
-        "endDate":"07-17-2022 12:30:00",
-        "owner":"Etkinlik Sahibi",
+        "startDate":"24-07-2022 20:00:00",
+        "endDate":"24-07-2022 23:00:00",
+        "owner":"Pinhani",
         "images":[
-            {"src":"https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-            {"src":"https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-            {"src":"https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+            {"src":"https://img-s1.onedio.com/id-617a56665e93eaf545ca3acc/rev-0/w-1200/h-630/f-jpg/s-06c4c5ba976c3fd74d3fda71cabfa3d5a8e166a9.jpg"},
+            {"src":"https://www.merfest.org.tr/File_Uploadx/Sayfa/buyuk/merfest-pinhani-229314.JPG"}
         ],
-        "city": "İstanbul",
-        "place": "Harbiye Açık Hava Tiyatrosu",
-        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12036.195328280166!2d28.9900301!3d41.0460612!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa73a3d0b8b295da9!2sCemil%20Topuzlu%20A%C3%A7%C4%B1k%20Hava%20Tiyatrosu!5e0!3m2!1str!2str!4v1655626759230!5m2!1str!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "city": "Muğla",
+        "place": "Marmaris Amfi Tiyatro",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12769.910236435793!2d28.2585881!3d36.8549864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5084f3b7ec509190!2sMarmaris%20Amfi%20Tiyatro!5e0!3m2!1str!2str!4v1655923056424!5m2!1str!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "isTicketed": true,
         "seats": [
             {"category":"1.Kategori", "price":"250 TL"},
@@ -25,20 +24,19 @@
     },
     {
         "id":"2",
-        "title": "Etkinlik 2",
-        "description": "Etkinlik Açıklaması 2",
-        "category": "Tiyatro",
-        "startDate":"05-03-2022 10:12:00",
-        "endDate":"05-03-2022 12:30:00",
-        "owner":"Etkinlik Sahibi 2",
+        "title": "Zeytinli Rock Fest 2022",
+        "description": "Umut Kuzey öncülüğünde Milyon Yapım Organizasyon tarafından Burhaniye Belediyesi’nin katkılarıyla 7. kez gerçekleşecek Türk rock müziğinin geçit töreni Zeytinli Rock Festivali 17-18-19-20-21 Ağustos 2022 tarihlerinde Burhaniye’de düzenlenecek.",
+        "category": "Festival",
+        "startDate":"17-08-2022 10:10:00",
+        "endDate":"21-08-2022 23:30:00",
+        "owner":"Milyon Yapım Organizasyon",
         "images":[
-            {"src":"https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-            {"src":"https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-            {"src":"https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+            {"src":"https://www.kulturservisi.com/wp-content/uploads/2018/08/zeytinli-2.jpg"},
+            {"src":"https://pbs.twimg.com/media/FKB2pk0WYAA9RKA?format=jpg&name=large"}
         ],
-        "city": "İstanbul",
-        "place": "Harbiye Açık Hava Tiyatrosu",
-        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12036.195328280166!2d28.9900301!3d41.0460612!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa73a3d0b8b295da9!2sCemil%20Topuzlu%20A%C3%A7%C4%B1k%20Hava%20Tiyatrosu!5e0!3m2!1str!2str!4v1655626759230!5m2!1str!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "city": "Balıkesir",
+        "place": "Zeytinli Rock Festivali Plajı",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12303.591210108852!2d26.940082934362874!3d39.56191187157637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0b9ad46606343%3A0xef99d6d079fb2efd!2sZeytinli%20Rock%20Festivali%20Plaj!5e0!3m2!1str!2str!4v1655923479400!5m2!1str!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "isTicketed": true,
         "seats": [
             {"category":"1.Kategori", "price":"250 TL"},
@@ -49,16 +47,14 @@
     },
     {
         "id":"3",
-        "title": "Etkinlik 3",
-        "description": "Etkinlik Açıklaması 3",
-        "category": "Sergi",
-        "startDate":"05-03-2022 10:12:00",
-        "endDate":"05-03-2022 12:30:00",
-        "owner":"Etkinlik Sahibi 3",
+        "title": "Medea Kali",
+        "description": "Ünlü Fransız yazar Laurent Gaude’nin usta kaleminden çıkan bu eser,  ilk kez Avingon Festivali’nde gösterildikten sonra, hızla popülerleşerek dünyanın pek çok ülkesinde sahnelenmiştir. ",
+        "category": "Tiyatro",
+        "startDate":"22-06-2022 15:00:00",
+        "endDate":"22-06-2022 17:00:00",
+        "owner":"Özge Çidamlı",
         "images":[
-            {"src":"https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-            {"src":"https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-            {"src":"https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+            {"src":"https://www.kahramangiller.com/wp-content/uploads/2016/12/medea-0.jpg"}
         ],
         "city": "Bursa",
         "place": "Ahmet Vefik Paşa Bursa Devlet Tiyatrosu",
@@ -73,16 +69,19 @@
     },
     {
         "id":"4",
-        "title": "Etkinlik 4",
-        "description": "Etkinlik Açıklaması 4",
-        "category": "Sergi",
-        "startDate":"05-03-2022 10:12:00",
-        "endDate":"05-03-2022 12:30:00",
-        "owner":"Etkinlik Sahibi 4",
-        "images":[],
-        "city": "Antalya",
-        "place": "Antalya Tiyatro",
-        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.1661241245547!2d29.06472811564377!3d40.18311627773783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca40e54c023763%3A0xd4c8084c9a21620e!2sAhmet%20Vefik%20Pa%C5%9Fa%20Bursa%20Devlet%20Tiyatrosu!5e0!3m2!1str!2str!4v1655626890061!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "title": "İkinin Biri",
+        "description": "İngiltere İçişleri bakan yardımcısı Richard Willey, muzır yasasının tartışılacağı toplantı için birkaç geceliğine eşiyle birlikte Westminster Oteli’ne kalmaya gider. Ancak Richard’ın bu iş gezisi sırasında planladığı başka şeyler vardır. Özel kalem müdürü George, otel çalışanları ve beklenmedik misafirlerin yardımıyla her kapının ardından başka bir karmaşa çıkar.",
+        "category": "Tiyatro",
+        "startDate":"22-06-2022 20:00:00",
+        "endDate":"22-06-2022 22:00:00",
+        "owner":"Tiyatro Sahnekarlar",
+        "images":[
+            {"src": "https://im.haberturk.com/2019/03/09/ver1552132239/2397697_810x458.jpg"},
+            {"src": "https://im.haberturk.com/2019/03/09/ver1552132239/2397697_aa52e7786c8e250830e65bf00a5ce838.jpg"}
+        ],
+        "city": "Ordu",
+        "place": "Ordu Kültür Sanat Merkezi",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96439.87405493973!2d37.839453092040216!3d40.94323225948754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406321d1dcf9bd25%3A0x215a601b9a44f2c2!2sOrdu%20K%C3%BClt%C3%BCr%20Sanat%20Mer.!5e0!3m2!1str!2str!4v1655924536831!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "isTicketed": true,
         "seats": [
             {"category":"1.Kategori", "price":"250 TL"},
@@ -90,5 +89,231 @@
             {"category":"3.Kategori", "price":"100 TL"}
         ],
         "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"5",
+        "title": "Anadolu Ateşi - Fire of Anatolia",
+        "description": "Anadolu Ateşi'nin temel konsepti medeniyetler buluşmasıdır. Doğu ile batı kültürlerinin buluşmasını hedefleyen, evrensel barış mesajları veren bir dans portresidir. Halk danslarını bale, modern dans ve dansın diğer disiplinleri ile sentezleyerek dünyaya modern standartlarda bir gösteriyi, bir kültürel şöleni sunmaktadır. Kaynağını Anadolu’nun binlerce yıllık mitolojik ve kültürel tarihinden alan Anadolu  Ateşi hemen hemen her yöreden derlenmiş 3000 halk dansı figürü ve halk müziğini içinde barındıran özgün bir projedir. Mustafa Erdoğan imzasını taşıyan proje, Anadolu’nun binlerce yıllık kültür ve tarih mozaiğinin barışla harmanlanan ateşini tüm dünyaya tanıtmayı hedeflemektedir.",
+        "category": "Dans",
+        "startDate":"28-06-2022 21:00:00",
+        "endDate":"28-06-2022 23:30:00",
+        "owner":"Anadolu Ateşi",
+        "images":[
+            {"src": "https://www.eskisehir.net/images/haberler/2022/02/anadolu_atesi_h50506_92db9.jpg"},
+            {"src": "https://mersinyasamrehberi.com/wp-content/uploads/2019/09/mersinyasamrehberi_anadolu-atesi.jpg"}
+        ],
+        "city": "Antalya",
+        "place": "Aspendos Antik Tiyatro",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3188.961301545507!2d31.169989915148786!3d36.93909197992025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c49e7638f76edd%3A0x82aaad9ddfd636b6!2sAspendos%20Antik%20Tiyatro!5e0!3m2!1str!2str!4v1655924777379!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": true,
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ],
+        "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"6",
+        "title": "Bir İspanya Gecesi",
+        "description": "Flamenkonun ateşi 3 Temmuz Pinç sahnesinde, Flamenkoevi'nin hazırladığı gösterinin dans yönetimi Melek Yel'e ait. Müzik ve danslar Flanenkonun geleneksel en sevilen palolarindan bir seçki olarak sunulacak.",
+        "category": "Dans",
+        "startDate":"03-07-2022 20:30:00",
+        "endDate":"03-07-2022 23:00:00",
+        "owner":"Melek Yel",
+        "images":[],
+        "city": "İstanbul",
+        "place": "Pinç Pub",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.512171790458!2d28.980731415277933!3d41.035927479297996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab74621e9b51f%3A0x14e770dbeba10a2f!2zUGluw6cgUHVi!5e0!3m2!1str!2str!4v1655925247795!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": false,
+        "seats": [],
+        "seatPlan": ""
+    },
+    {
+        "id":"7",
+        "title": "Can Gox",
+        "description": "Can Gox, 24 Haziran akşamı 6:45 Pub Turgutreis sahnesinde sizlerle...",
+        "category": "Konser",
+        "startDate":"24-06-2022 22:00:00",
+        "endDate":"24-06-2022 23:50:00",
+        "owner":"Can Gox",
+        "images":[
+            {"src": "https://www.sandvic.com.tr/wp-content/uploads/2021/12/Can-Gox.jpg"}
+        ],
+        "city": "Muğla",
+        "place": "6:45 Pub TurgutReis",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d407875.1879147567!2d26.69876306562501!3d36.99727209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14be0b90c05c0487%3A0xb7827d377ea9ac75!2sKaybedenler%20Kul%C3%BCb%C3%BC%20Bodrum%2000%3A48!5e0!3m2!1str!2str!4v1655925530992!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": true,
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ],
+        "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"8",
+        "title": "Fatma Turgut",
+        "description": "Fatma Turgut, 24 Haziran'da Kadıköy Dorock XL'da !",
+        "category": "Konser",
+        "startDate":"27-06-2022 19:00:00",
+        "endDate":"27-06-2022 22:30:00",
+        "owner":"Fatma Turgut",
+        "images":[
+            {"src":"https://i4.hurimg.com/i/hurriyet/75/750x422/5d41cb3f0f25441cf414342e.jpg"}
+        ],
+        "city": "İstanbul",
+        "place": "Dorock XL Kadıköy",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6376210408234!2d29.02127311527653!3d40.989415279302776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab85d7dccd60b%3A0x84e2c8008eaf6d18!2zRG9yb2NrIFhMIEthZMSxa8O2eQ!5e0!3m2!1str!2str!4v1655926032902!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": true,
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ],
+        "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"9",
+        "title": "Gökhan Türkmen",
+        "description": "Güzel bir müzik gecesi Mask Beach sahnesinde sizi bekliyor.",
+        "category": "Konser",
+        "startDate":"28-06-2022 17:00:00",
+        "endDate":"28-06-2022 19:30:00",
+        "owner":"Gökhan Türkmen",
+        "images":[
+            {"src":"https://static.birgun.net/resim/haber-detay-resim/2019/11/22/gokhan-turkmen-in-sir-parcasi-yayinda-652603-5.jpg"}
+        ],
+        "city": "İstanbul",
+        "place": "Mask Beach",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.8415077331606!2d28.64964121527565!3d40.96305077930541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b56118cb1b8333%3A0xff26f0179158ee1!2sMask%20Beach!5e0!3m2!1str!2str!4v1655926200922!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": true,
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ],
+        "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"10",
+        "title": "Cem İşçiler - Stand Up",
+        "description": "Cem İşçiler bugüne kadar 100’den fazla sergilediği tek kişilik gösterisi “Komik Olan Ben Değilim”adlı tek kişilik stand up performansıyla sevenleriyle buluşuyor.",
+        "category": "Stand-Up",
+        "startDate":"01-07-2022 17:00:00",
+        "endDate":"01-07-2022 19:30:00",
+        "owner":"Cem İşçiler",
+        "images":[
+            {"src": "https://yt3.ggpht.com/ytc/AKedOLS8K2KftW-7M9RthzoFCjPhgYDdYGMGvj5hgOZ7jw=s900-c-k-c0x00ffffff-no-rj"}
+        ],
+        "city": "İzmir",
+        "place": "Performance Hall",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.576725895573!2d27.198981415195124!3d38.451244779641975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b9631969e28a0d%3A0x92d059cfbca41510!2s%C4%B0zmir%20Performance%20Hall!5e0!3m2!1str!2str!4v1655926377240!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": true,
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ],
+        "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"11",
+        "title": "Tolgshow",
+        "description": "‘Arkadaşım’ karakteri ile milyonları güldüren Tolga Çevik sahnede artık bir klasik haline gelen doğaçlama oyununun Türkiye Turnesi’yle izleyicinin karşısına çıkıyor.",
+        "category": "Stand-Up",
+        "startDate":"14-08-2022 17:00:00",
+        "endDate":"14-08-2022 19:30:00",
+        "owner":"Tolga Çevik",
+        "images":[
+            {"src": "https://www.rehbercanakkale.com/images/haberler/2020/01/tolga-cevik-tolgshow-ile-canakkale-ye-geliyor_m.jpg"},
+            {"src":"https://www.marasgundem.com.tr/d/news/1259084.jpg"}
+        ],
+        "city": "Balıkesir",
+        "place": "Altınoluk Amfi Tiyatro",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.2178746291866!2d26.738679515230743!3d39.57723977947162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b09429b3648735%3A0x5a2249fb1ced82b1!2sAlt%C4%B1noluk%20Amfi%20Tiyatro!5e0!3m2!1str!2str!4v1655926546619!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": true,
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ],
+        "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"12",
+        "title": "Fatih Erkoç - Kerem Görsev",
+        "description": "Poll Production organizasyonuyla Türkiye’nin en güçlü seslerinden Fatih Erkoç ve ülkemizin önde gelen caz piyanisti Kerem Görsev 18 Temmuz tarihinde Paraf Kuruçeşme Açıkhava sahnesinde buluşuyor.",
+        "category": "Konser",
+        "startDate":"18-07-2022 19:00:00",
+        "endDate":"18-07-2022 22:30:00",
+        "owner":"Poll Production",
+        "images":[
+            {"src":"https://api.bubilet.com.tr/files/Etkinlik/fatih-erkoc-kerem-gorsev-trio-konseri-98468.jpg"}
+        ],
+        "city": "İstanbul",
+        "place": "Kuruçeşme Açık Hava",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.7895404223495!2d29.031644215278593!3d41.051731279296504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7e68aa724f3%3A0xecbfca61072268cc!2zS3VydcOnZcWfbWUgQcOnxLFrIEhhdmEgS29uc2VyIEFsYW7EsQ!5e0!3m2!1str!2str!4v1655926869984!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": false,
+        "seats": [],
+        "seatPlan": ""
+    },
+    {
+        "id":"13",
+        "title": "Yüksek Sadakat",
+        "description": "Yüksek Sadakat, 25 haziran Cumartesi akşamı Jolly Joker Bursa sahnesinde.",
+        "category": "Konser",
+        "startDate":"14-08-2022 17:00:00",
+        "endDate":"14-08-2022 19:30:00",
+        "owner":"Yüksek Sadakat",
+        "images":[
+            {"src":"https://i.dreamtv.com.tr/i/dreamtv/100/840x395/f/5559eb509ebea45f62e635ee"}
+        ],
+        "city": "Bursa",
+        "place": "Jolly Joker",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.2274869111875!2d28.968149315251633!3d40.2262439793876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca16a037f48bf3%3A0x8a6f976f3a5b7090!2sJolly%20Joker%20Bursa!5e0!3m2!1str!2str!4v1655927113619!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": true,
+        "seats": [
+            {"category":"1.Kategori", "price":"250 TL"},
+            {"category":"2.Kategori", "price":"200 TL"},
+            {"category":"3.Kategori", "price":"100 TL"}
+        ],
+        "seatPlan": "/images/seat-plan3.png"
+    },
+    {
+        "id":"14",
+        "title": "Kültürel Aktarımlar",
+        "description": "Nilgün Yüksel’in küratörlüğünde Ali Atmaca, Bubi, Horasan, Hüsamettin Koçan, Meriç Hızal, Onay Akbaş, Şenol Yorozlu eserlerinden oluşan “Kültürel Aktarımlar” sergisi, kültürün sürekliliğinden, sanatçının geçmişten miras aldığı ve  içinde yaşadığı kültürün üretimine aktarılışından yola çıkarak hazırlandı. Sergi, sanatçıların yüzyıllar boyu süren kültürel aktarımları kendi bireysel varoluşlarıyla nasıl sentezlediğine, yarattıkları eserler üzerinden bakıyor.",
+        "category": "Sergi",
+        "startDate":"16-09-2022 17:00:00",
+        "endDate":"14-11-2022 19:30:00",
+        "owner":"Nilgün Yüksel",
+        "images":[
+            {"src":"https://kultur.istanbul/gorsel/2022/05/kulturel-aktarimlar-sergisi.jpg"}
+        ],
+        "city": "İstanbul",
+        "place": "Brieflyart",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4741113028294!2d28.98826821541503!3d41.03675997929794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab774cac8f581%3A0x8d02576709185c74!2sBrieflyart%20M%C3%BCzayedecilik%20A.%C5%9E.!5e0!3m2!1str!2str!4v1655927372762!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": false,
+        "seats": [],
+        "seatPlan": ""
+    },
+    {
+        "id":"14",
+        "title": "Zamanın Döngüsel Doğası",
+        "description": "Zaman kavramının ortaya çıkışıyla ilgili farklı teorileri odağına alan sergi, zamanı ölçmeye başladığımızdan beri göç, iktidar savaşları, yabancılaşma ve inanç sistemleri gibi tekrar eden olayların yansımalarını izleyici ile buluşturuyor.",
+        "category": "Sergi",
+        "startDate":"09-08-2022 17:00:00",
+        "endDate":"12-08-2022 19:30:00",
+        "owner":"Anna Laudel",
+        "images":[
+            {"src":"https://kultur.istanbul/gorsel/2022/06/anna-laudel.jpg"}
+        ],
+        "city": "İstanbul",
+        "place": "Brieflyart",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4741113028294!2d28.98826821541503!3d41.03675997929794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab774cac8f581%3A0x8d02576709185c74!2sBrieflyart%20M%C3%BCzayedecilik%20A.%C5%9E.!5e0!3m2!1str!2str!4v1655927372762!5m2!1str!2str' width='600' height='450' style='border:0;'' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
+        "isTicketed": false,
+        "seats": [],
+        "seatPlan": ""
     }
 ]

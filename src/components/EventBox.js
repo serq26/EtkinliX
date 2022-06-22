@@ -6,8 +6,10 @@ import 'moment/locale/tr';
 
 export default function EventBox({ event }) {
   moment.locale("tr");
+
+
   return (
-    <div className="col-xl-4">
+    <div className="col-xl-4 col-md-6 col-lg-4">
       <div className="event-box">
         <Link to={`/event/${event.id}`} title={event.title}>
           <div className="event-image">
@@ -28,8 +30,8 @@ export default function EventBox({ event }) {
           </Link>
           <small className="date">
             <img src="/icons/calendar.png" alt="date" />
-            {moment(event.startDate).format("lll")} -{" "}
-            {moment(event.endDate).format("lll")}
+            {moment(event.startDate, "DD-MM-YYYY hh:mm:ss").format("lll")} -{" "}
+            {moment(event.endDate, "DD-MM-YYYY hh:mm:ss").format("lll")}
           </small>
           <span className="category">{event.category}</span>
         </div>

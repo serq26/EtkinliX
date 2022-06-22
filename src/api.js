@@ -1,4 +1,3 @@
-// var events = require("./data/events.json");
 import events from "./data/events.json";
 import urlSlug from "url-slug";
 
@@ -7,7 +6,23 @@ import urlSlug from "url-slug";
  */
 function findAll() {
   return new Promise((resolve, reject) => {
-    resolve(events);
+    const today = Date.now();
+    const newEvents = events.filter((e) => toTimeStamp(e.startDate) >= today);
+    resolve(newEvents);
+  });
+}
+
+/**
+ * Get data by page params start and end
+ * @param {Number} start
+ * @param {Number} end
+ */
+let arrayForHoldingPosts = [];
+function findAllWithPage(start, end) {
+  return new Promise((resolve, reject) => {
+    const slicedPosts = events.slice(start, end);
+    arrayForHoldingPosts = [...arrayForHoldingPosts, ...slicedPosts];
+    resolve(arrayForHoldingPosts);
   });
 }
 
@@ -54,6 +69,9 @@ function findBySearch(value) {
   });
 }
 
+/**
+ * Gets a list of cities where events are held in the database
+ */
 function getCities() {
   return new Promise((resolve, reject) => {
     var cities = [];
@@ -64,6 +82,9 @@ function getCities() {
   });
 }
 
+/**
+ * Gets a list of categories where events are held in the database
+ */
 function getCategories() {
   return new Promise((resolve, reject) => {
     var categories = [];
@@ -75,6 +96,9 @@ function getCategories() {
   });
 }
 
+/**
+ * Gets a list of places where events are held in the database
+ */
 function getPlaces() {
   return new Promise((resolve, reject) => {
     var places = [];
@@ -95,6 +119,13 @@ function getPlaceEvents(place) {
   });
 }
 
+/**
+ * Get event by filters
+ * @param {Object} filters
+ * @param {String} filters.city
+ * @param {String} filters.category
+ * @param {String} filters.place
+ */
 function getEventsByFilter(filters) {
   return new Promise((resolve, reject) => {
     const filtered = events.filter((item) => {
@@ -109,16 +140,104 @@ function getEventsByFilter(filters) {
   });
 }
 
+/**
+ * Gets out-of-date events events
+ */
 function getOldEvents() {
   return new Promise((resolve, reject) => {
     const today = Date.now();
-    const oldEvents = events.filter((e) =>Date.parse(e.startDate) < today);
+    const oldEvents = events.filter((e) => toTimeStamp(e.startDate) < today);
+    console.log(oldEvents)
     resolve(oldEvents);
   });
 }
 
+/**
+ * Returns similar events based on the given event
+ * @param {String} category
+ * @param {Number} id
+ */
+function getSimilarEvents(category, id) {
+  return new Promise((resolve, reject) => {
+    const similarEvents = events.filter(
+      (e) => e.category === category && e.id !== id
+    );
+    resolve(similarEvents);
+  });
+}
+
+export function toTimeStamp(dateStr) {
+  const justDate = dateStr.split(" ")[0];
+  const [day, month, year] = justDate.split("-");
+  return Date.parse(
+    year + "/" + month + "/" + day + " " + dateStr.split(" ")[1]
+  );
+}
+
+export function toTimeStamp2(dateStr) {
+  const [year, month, day] = dateStr.split("-");
+  return Date.parse(
+    year + "/" + month + "/" + day + " "
+  );
+}
+
+/**
+ * Returns events from the given start date
+ * @param {String} date
+ */
+function getEventsByStartDate(date) {
+  return new Promise((resolve, reject) => {
+    const result = events.filter(
+      (e) => toTimeStamp(e.startDate) >= Date.parse(date)
+    );
+    resolve(result);
+  });
+}
+
+/**
+ * Returns events from the given start date
+ * @param {String} date
+ */
+function getEventsByEndDate(date) {
+  return new Promise((resolve, reject) => {
+    const result = events.filter(
+      (e) => toTimeStamp(e.startDate) <= Date.parse(date)
+    );
+    resolve(result);
+  });
+}
+
+/**
+ * Returns events from the given dates
+ * @param {String} starDate
+ * @param {String} endDate
+ */
+ function getEventsByDate(startDate="01-01-2010",endDate="01-01-2030") {
+  return new Promise((resolve, reject) => {
+    const result = events.filter(
+      (e) => toTimeStamp(e.startDate) >= toTimeStamp2(startDate) && toTimeStamp(e.startDate) <= toTimeStamp2(endDate)
+    );
+    resolve(result);
+  });
+}
+
+/**
+ * Get all popular events
+ */
+export const getPopularEvents = () => {
+  const popularEvents = events
+    .sort(() => Math.random() - Math.random())
+    .slice(0, 4);
+  return popularEvents;
+};
+
 export const fetchEventList = async () => {
   const events = await findAll();
+  return events;
+};
+
+export const fetchEventListWithPage = async (start, end) => {
+  const events = await findAllWithPage(start, end);
   return events;
 };
 
@@ -165,4 +284,24 @@ export const fetchEventsByFilter = async (filters) => {
 export const fetchOldEvents = async () => {
   const oldEvents = await getOldEvents();
   return oldEvents;
+};
+
+export const fetchSimilarEvents = async (category, id) => {
+  const similarEvents = await getSimilarEvents(category, id);
+  return similarEvents;
+};
+
+export const fetchEventsByStartDate = async (date) => {
+  const sEvents = await getEventsByStartDate(date);
+  return sEvents;
+};
+
+export const fetchEventsByEndDate = async (date) => {
+  const eEvents = await getEventsByEndDate(date);
+  return eEvents;
+};
+
+export const fetchEventsByDate = async (startDate,endDate) => {
+  const eEvents = await getEventsByDate(startDate,endDate);
+  return eEvents;
 };

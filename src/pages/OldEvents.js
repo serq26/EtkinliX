@@ -1,16 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchOldEvents } from "../api";
 import EventListItem from "../components/EventListItem";
-import { useEvents } from "../contexts/EventContext";
-import * as urlSlug from 'url-slug'
 
 export default function OldEvents() {
-  const { events, setEvents } = useEvents();
+  const [oldEvents, setOldEvents] = useState([]);
 
   useEffect(() => {
     const getOldEvents = async () => {
       const oldEvents = await fetchOldEvents();
-      setEvents(oldEvents);
+      setOldEvents(oldEvents);
     };
 
     getOldEvents();
@@ -23,7 +21,7 @@ export default function OldEvents() {
           <div className="place-events">
             <h2>Geçmiş Etkinlikler</h2>
             <ul>
-              {events.map((event, key) => (
+              {oldEvents.map((event, key) => (
                 <EventListItem key={key} event={event} />
               ))}
             </ul>

@@ -5,12 +5,13 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
-import { fetchEventById, fetchSimilarEvents } from "../api";
+import { fetchEventById, fetchSimilarEvents, toTimeStamp } from "../api";
 import SocialMediaShare from "../components/SocialMediaShare";
 import urlSlug from "url-slug";
 import moment from "moment";
 import "moment/locale/tr";
 import Loading from "../components/Loading";
+import Ticket from "../components/Ticket";
 
 export default function EventDetail() {
   const [event, setEvent] = useState({});
@@ -30,7 +31,6 @@ export default function EventDetail() {
       setLoading(false);
     };
 
-    // setTimeout(() => {getEvent(eventId)},2000);
     getEvent(eventId);
   }, [eventId]);
 
@@ -47,10 +47,10 @@ export default function EventDetail() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-xl-8">
+        <div className="col-xl-8 col-lg-8">
           <div className="event-detail">
             {!loading ? (
-              <div className="container">
+              <div>
                 <h2 className="title">
                   {event.title} <span>/ {event.owner}</span>
                 </h2>
@@ -64,11 +64,13 @@ export default function EventDetail() {
                     loop={true}
                     delay={1000}
                   >
-                    {event.images.length > 0 ? event.images.map((img, key) => (
-                      <SwiperSlide key={key}>
-                        <img src={img.src} alt={event.title} />
-                      </SwiperSlide>
-                    )):(
+                    {event.images.length > 0 ? (
+                      event.images.map((img, key) => (
+                        <SwiperSlide key={key}>
+                          <img src={img.src} alt={event.title} />
+                        </SwiperSlide>
+                      ))
+                    ) : (
                       <SwiperSlide>
                         <img src="/images/empty-image.png" alt="empty" />
                       </SwiperSlide>
@@ -96,36 +98,121 @@ export default function EventDetail() {
                 <div className="dates">
                   <span className="date">
                     <img src="/icons/calendar.png" alt="date" />
-                    Başlangıç Tarihi: {moment(event.startDate).format("lll")}
+                    Başlangıç Tarihi: {moment(event.startDate, "DD-MM-YYYY hh:mm:ss").format("lll")}
                   </span>
                   <span className="date">
                     <img src="/icons/calendar.png" alt="date" />
-                    Bitiş Tarihi: {moment(event.endDate).format("lll")}
+                    Bitiş Tarihi: {moment(event.endDate, "DD-MM-YYYY hh:mm:ss").format("lll")}
                   </span>
                 </div>
                 <div className="event-description">
                   <h6>Etkinlik Açıklaması: </h6>
                   <p>{event.description}</p>
                 </div>
-                {event.isTicketed && (
-                  <div className="seats">
-                    <h6>Bilet Al</h6>
-                    <select
-                      id="seats"
-                      name="seats"
-                      onChange={(e) => setSeatCategory(e.target.value)}
-                    >
-                      {event.seats.map((item, index) => (
-                        <option
-                          value={`${item.category} - ${item.price}`}
-                          key={index}
+                {!event.isTicketed && <h4 className="free-event"><img src="/icons/free.png" alt="free"/>Etkinlik Ücretsizdir</h4>}
+                {event.isTicketed && toTimeStamp(event.startDate) >= Date.now() && (
+                  <div>
+                    <div className="seats">
+                      <div className="left">
+                        <h6>Bilet Al</h6>
+                        <select
+                          id="seats"
+                          name="seats"
+                          onChange={(e) => setSeatCategory(e.target.value)}
                         >
-                          {item.category}
-                        </option>
-                      ))}
-                    </select>
-                    <span>Fiyat: {seatCategory.split("-")[1]}</span>
-                    <button>Satın Al</button>
+                          <option value="">Kategori Seçiniz</option>
+                          {event.seats.map((item, index) => (
+                            <option
+                              value={`${item.category} - ${item.price}`}
+                              key={index}
+                            >
+                              {item.category}
+                            </option>
+                          ))}
+                        </select>
+                        <span>Fiyat: {seatCategory.split("-")[1]}</span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            document.getElementById(
+                              "small_modal"
+                            ).style.display = "block";
+                            document.getElementById(
+                              "small_modal"
+                            ).style.opacity = 1;
+                          }}
+                          disabled={seatCategory === "" ? true : false}
+                        >
+                          Satın Al
+                        </button>
+                      </div>
+                      <div className="right">
+                        <img
+                          className="seat-plan"
+                          src={event.seatPlan}
+                          alt="Seat Plan"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      id="small_modal"
+                      className="modal fade"
+                      role="dialog"
+                      aria-labelledby="mySmallModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5
+                              className="modal-title"
+                              id="exampleModalLabel"
+                              style={{ display: "flex", alignItems: "center" }}
+                            >
+                              <img
+                                src="/icons/success.png"
+                                alt="success"
+                                style={{ marginRight: "8px" }}
+                              />
+                              Biletiniz Oluşturuldu
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                              onClick={() => {
+                                document.getElementById(
+                                  "small_modal"
+                                ).style.display = "none";
+                                document.getElementById(
+                                  "small_modal"
+                                ).style.opacity = 0;
+                              }}
+                            ></button>
+                          </div>
+                          <div className="modal-body">
+                            <Ticket event={event} seatCategory={seatCategory} />
+                          </div>
+                          <div className="modal-footer">
+                            <button
+                              type="button"
+                              className="btn btn-success"
+                              onClick={() => {
+                                document.getElementById(
+                                  "small_modal"
+                                ).style.display = "none";
+                                document.getElementById(
+                                  "small_modal"
+                                ).style.opacity = 0;
+                              }}
+                            >
+                              Tamam
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
@@ -134,7 +221,7 @@ export default function EventDetail() {
             )}
           </div>
         </div>
-        <div className="col-xl-4">
+        <div className="col-xl-4 col-lg-4">
           <div className="event-map">
             <div className="title">
               <img src="/icons/location.png" alt="location" />
@@ -164,9 +251,16 @@ export default function EventDetail() {
             <ul>
               {similarEvents.map((e, key) => (
                 <li key={key}>
-                  <Link to="/">
-                    <img src={e.images.length > 0 ? e.images[0].src : "/images/empty-image.png"} alt={e.title} />
-                    <span>{e.title}</span>  
+                  <Link to={`/event/${e.id}`}>
+                    <img
+                      src={
+                        e.images.length > 0
+                          ? e.images[0].src
+                          : "/images/empty-image.png"
+                      }
+                      alt={e.title}
+                    />
+                    <span>{e.title}</span>
                   </Link>
                 </li>
               ))}
