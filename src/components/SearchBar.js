@@ -72,13 +72,17 @@ export default function SearchBar() {
           <div className="search-result">
             {result &&
               loading === false &&
-              result.map((event) => (
-                <Link to={`/event/${event.id}`}>
-                  <div
-                    key={event.id}
-                    className="search-result-item"
-                  >
-                    <img src={event.images.length > 0 ? event.images[0].src : "/images/empty-image.png"} alt={event.title} />
+              result.map((event,key) => (
+                <Link to={`/event/${event.id}`} key={key}>
+                  <div className="search-result-item">
+                    <img
+                      src={
+                        event.images.length > 0
+                          ? event.images[0].src
+                          : "/images/empty-image.png"
+                      }
+                      alt={event.title}
+                    />
                     <div>
                       <div className="title">{event.title}</div>
                       <div className="date">{event.owner}</div>
@@ -86,7 +90,7 @@ export default function SearchBar() {
                   </div>
                 </Link>
               ))}
-            {loading && new Array(3).fill().map(() => <AutocompleteLoader />)}
+            {loading && new Array(3).fill().map((item,key) => <AutocompleteLoader key={key} />)}
             {!result && loading === false && (
               <div className="result-not-found">
                 "{search}" ile ilgili bir sonuç bulunamadı!
